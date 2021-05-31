@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 //Import Routes
 const authRoute = require('./Routes/auth')
 const postRoute = require('./Routes/posts')
+const { verify } = require('jsonwebtoken')
 
 dotenv.config()
 const app = express()
