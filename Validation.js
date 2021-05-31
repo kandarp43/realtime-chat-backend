@@ -4,7 +4,7 @@ const Joi = require('joi')
 const registrationValidation = async (body) => {
   //Defining Joi validation schema
   const schema = Joi.object({
-    name: Joi.string().min(6).required(),
+    username: Joi.string().min(6).required(),
     email: Joi.string().min(6).required().email().lowercase(),
     password: Joi.string().min(6).required(),
   })

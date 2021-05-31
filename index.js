@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 //Import Routes
 const authRoute = require('./Routes/auth')
 const postRoute = require('./Routes/posts')
-const { verify } = require('jsonwebtoken')
 
 dotenv.config()
 const app = express()
@@ -15,8 +14,8 @@ const app = express()
 app.use(express.json())
 
 //Route middlewares
-app.use('/api/user', authRoute)
-app.use(postRoute)
+app.use('/user', authRoute)
+app.use('/post', postRoute)
 
 //Connection to Database
 mongoose.connect(
