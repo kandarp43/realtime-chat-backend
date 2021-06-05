@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
   const HashedPassord = await bcrypt.compare(password, user.password)
   if (!HashedPassord) return res.status(400).send('invalid Email or Password')
   if (!user.isVerified)
-    return res.status(400).json({ error: 'your account is not verified please verify' })
+    return res.status(400).json({ error: 'your account is not verified ' })
 
   //creating jwt token
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
